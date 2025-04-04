@@ -1,0 +1,30 @@
+
+import re
+
+def parse_name():
+    
+
+class address: 
+    def __init__(self, street, city, name):
+        self.street = street
+        self.city = city
+        self.name = name
+    
+class employee:
+    def __init__(self, row):
+        self.row = row
+    
+    parse_name(row)
+        
+
+def parse_name (text):
+   re.search('(^[\w]+)\s([\w]+)', text)
+
+     
+def parse_address():
+    
+    
+def parse_email()
+
+def __main__(): 
+    
