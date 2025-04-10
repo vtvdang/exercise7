@@ -3,7 +3,11 @@ import os
 path = "C:\Users\vivia\Documents\GitHub\exercise7\people.txt"
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 class Address: 
+=======
+class Address:
+>>>>>>> Stashed changes
 =======
 class Address:
 >>>>>>> Stashed changes
@@ -12,7 +16,11 @@ class Address:
         self.city = city
         self.state = state
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
@@ -23,6 +31,7 @@ class Employee:
         self.email = parse_email(row)
 
 def parse_name(text):
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     pattern =re.search( r'(^[\w]+)\s([\w]+)', text)
     return pattern[1], pattern[2]
@@ -70,10 +79,42 @@ def parse_email(text):
 
 def __main__(path): 
     employee_list = []
+=======
+    name_pattern = r'(^[\w]+)\s([\w]+)' 
+    match = re.search(name_pattern, text)
+    if match:
+        first_name = match.group(1)
+        last_name = match.group(2)
+        return (first_name, last_name)
+    return None, None
+
+def parse_address(text):
+    address_pattern = r'(\d+\s[\w\s]+)\s([\w\s]+),\s([A-Z]{2})\s(\d{5})'
+    match = re.search(address_pattern, text)
+    if match:
+        street = match.group(1)
+        city = match.group(2)
+        state = match.group(3)
+        return Address(street, city, state)
+    return None
+
+def parse_email(text):
+    email_pattern = r'([\w\.-]+)@([\w\.-]+)\.(\w+)' 
+    match = re.search(email_pattern, text)
+    if match:
+        return match.group(0)
+    return None
+
+def __main__(path): 
+    employee_list = []
+>>>>>>> Stashed changes
     with open(path, 'r') as people:
         for line in people:
             new_employee = Employee(line.strip()) 
             employee_list.append(new_employee)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     return employee_list
 
