@@ -196,5 +196,8 @@ def __main__(path):
     return employee_list
 
 if __name__ == "__main__":
+"""
+    Executes the function
+    """
     employee = __main__("people.txt")
     print(employee) 
