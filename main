@@ -20,17 +20,16 @@ def parse_name(text):
      
 def parse_address(text):
     pattern = re.search(r'(\d+\s[]+\s[\w]+)\s[\w]+\s(\w{2}\s)', text)
-    Address= street, city, state
     street, city, state= pattern[1], pattern[2], pattern[3]
-    return Address
+    return Address(street, city,state)
 
-def parse_email():
+def parse_email(text):
     pattern =re.search(r'([\w\.-]+)@([\w\.-]+)(\.\w+$)', text)
-    return pattern[1]
+    return pattern[0]
 
 def __main__(path): 
     employee_list = []
-    people = open("people.txt")
+    with open(path) as people
     for line in people:
         new_employee = Employee(line)
         employee_list.append(new_employee)
