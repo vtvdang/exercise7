@@ -26,7 +26,7 @@ def parse_address(text):
     pattern = re.search(r'(\d+\s[]+\s[\w]+)\s[\w]+\s(\w{2}\s)', contents)
     street_number, street_name, city, state= pattern[1], pattern[2], pattern[3], pattern[4]
 
-def parse_email()
+def parse_email():
     email = r'([\w\.-]+)@([\w\.-]+)(\.\w+$)'
     pattern =re.search(r'([\w\.-]+)@([\w\.-]+)(\.\w+$)', contents)
     email= pattern[1]
