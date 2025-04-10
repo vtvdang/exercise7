@@ -11,7 +11,23 @@ class Address:
 =======
 class Address:
 >>>>>>> Stashed changes
+ """
+    A class that represents an address.
+
+    Attributes:
+        street(str): The street address
+        city(str): The city of the address
+        state(str): The state of the address
+    """
     def __init__(self, street, city, state):
+ """
+        Initializes the Address with street, city, and state
+        
+        Parameters:
+        street(str): The street address
+        city(str): The city of the address
+        state(str): The state of the address
+        """
         self.street = street
         self.city = city
         self.state = state
@@ -25,27 +41,79 @@ class Address:
 
 >>>>>>> Stashed changes
 class Employee:
+"""
+    A class that represent an employee
+
+    Attributes:
+    first_name(str): The first name of the employee
+    last_name(str): The last name of the employee
+    address(str): The address of the employee
+    email(str): The email of the employee
+    """
     def __init__(self, row):
+"""
+    Initializes the employee
+
+    Parameters:
+        row (str): A string with employee's name, address, email
+        """
         self.first_name, self.last_name = parse_name(row)
         self.address = parse_address(row)
         self.email = parse_email(row)
 
 def parse_name(text):
+ parse_name(text):
+    """
+    Parses for first and last name
+    
+    Parameters:
+        text(str): A string with first and last name
+
+    Return:
+    tuple: A tuple with first and last names.
+    """
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     pattern =re.search( r'(^[\w]+)\s([\w]+)', text)
     return pattern[1], pattern[2]
      
 def parse_address(text):
+"""
+    Parses for street, city, state
+    
+    Parameters:
+        text(str): A string with address
+
+    Return:
+    tuple: A tuple with the address
+    """
     pattern = re.search(r'(\d+\s[]+\s[\w]+)\s[\w]+\s(\w{2}\s)', text)
     street, city, state= pattern[1], pattern[2], pattern[3]
     return Address(street, city,state)
 
 def parse_email(text):
+"""
+    Parses for email
+
+    Parameters:
+    text(str): string with email
+
+    Return:
+    str: email
+    """
     pattern =re.search(r'([\w\.-]+)@([\w\.-]+)(\.\w+$)', text)
     return pattern[0]
 
 def __main__(path): 
+  """
+    Reads the file and creates new employees and returns them
+
+        Parameters:
+        Path(str): the path to the file
+
+        Returns:
+        List: list of employees
+    """
     employee_list = []
     with open(path) as people
     for line in people:
@@ -78,6 +146,15 @@ def parse_email(text):
     return None
 
 def __main__(path): 
+"""
+    Reads the file and creates new employees and returns them
+
+        Parameters:
+        Path(str): the path to the file
+
+        Returns:
+        List: list of employees
+    """
     employee_list = []
 =======
     name_pattern = r'(^[\w]+)\s([\w]+)' 
