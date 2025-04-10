@@ -1,31 +1,41 @@
 import re
-    
-def parse_name (text):
-   name= re.search('(^[\w]+)\s([\w]+)', text)
-     return name
-
-def parse_address(text):
-    re.search( , text)
-    
-def parse_email(text):
-    re.search( , text)
 
 class Address: 
-
     def __init__(self, street, city, name):
         self.street = street
         self.city = city
         self.name = name
     
 class Employee:
+    def __init__(self, row):
+        self.row = row 
+        self.first_name, self.last_name = parse_name(row)
+        self.address = parse_address(row)
+        self.email = parse_email(row)
+        
 
-    def __init__(self, text):
-        self.text = parse_name(text)
-
-def __main__(): 
-
-    employee_list =[]
-
-if __name__ =="__main__":
-    main("people.txt")
+def parse_name (text):
+    name = ()
+    pattern = r'(^[\w]+)\s([\w]+)'
+    name += pattern
     
+    print(pattern)
+     
+def parse_address(text):
+    address = Address('a', 'b', 'c')
+    pattern = r'(\d+\s[]+\s[\w]+)\s[\w]+\s(\w{2}\s)'
+    
+def parse_email()
+    email = r'([\w\.-]+)@([\w\.-]+)(\.\w+$)'
+
+def __main__(path): 
+    employee_list = []
+    people = open("people.txt")
+    for line in people:
+        new_employee = Employee(line)
+        employee_list.append(new_employee)
+    return employee_list
+    
+if __name__ == "__main__":
+    employee = __main__("people.txt")
+    print(employee)
