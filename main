@@ -14,19 +14,21 @@ class Employee:
         self.email = parse_email(row)
         
 
-def parse_name (text):
+def parse_name(text):
     name = ()
-    pattern = r'(^[\w]+)\s([\w]+)'
+    pattern =re.search( r'(^[\w]+)\s([\w]+)', contents)
     name += pattern
     
     print(pattern)
      
 def parse_address(text):
     address = Address('a', 'b', 'c')
-    pattern = r'(\d+\s[]+\s[\w]+)\s[\w]+\s(\w{2}\s)'
-    
+    pattern = re.search(r'(\d+\s[]+\s[\w]+)\s[\w]+\s(\w{2}\s)', contents)
+    if pattern
+
 def parse_email()
     email = r'([\w\.-]+)@([\w\.-]+)(\.\w+$)'
+    pattern =re.search(r'([\w\.-]+)@([\w\.-]+)(\.\w+$)', contents)[1]
 
 def __main__(path): 
     employee_list = []
@@ -37,5 +39,5 @@ def __main__(path):
     return employee_list
     
 if __name__ == "__main__":
-    employee = __main__("people.txt")
+    employee = main("people.txt")
     print(employee)
