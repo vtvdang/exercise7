@@ -1,10 +1,10 @@
 import re
 
 class Address: 
-    def __init__(self, street, city, name):
+    def __init__(self, street, city, state):
         self.street = street
         self.city = city
-        self.name = name
+        self.state = state
     
 class Employee:
     def __init__(self, row):
@@ -15,22 +15,17 @@ class Employee:
         
 
 def parse_name(text):
-    name = ()
     pattern =re.search( r'(^[\w]+)\s([\w]+)', text)
-    name += pattern
-    
-    print(pattern)
+    return pattern[1], pattern[2]
      
 def parse_address(text):
-    address = Address('a', 'b', 'c')
     pattern = re.search(r'(\d+\s[]+\s[\w]+)\s[\w]+\s(\w{2}\s)', text)
-    street, city, state= pattern[1], pattern[2], pattern[3], pattern[4]
-    return address
+    Address= street, city, state
+    street, city, state= pattern[1], pattern[2], pattern[3]
+    return Address
 
 def parse_email():
-    email = r'([\w\.-]+)@([\w\.-]+)(\.\w+$)'
     pattern =re.search(r'([\w\.-]+)@([\w\.-]+)(\.\w+$)', text)
-    email= pattern[1]
     return pattern[1]
 
 def __main__(path): 
